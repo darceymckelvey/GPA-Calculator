@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA Calculator</title>
+</head>
+<body>
+    <h1 id="msgId"></h1>
+
+    <script type="text/javascript">
+        const msg = prompt("Enter your letter grades as shown in brackets(BABBC):");
+
+        let user_grades = msg.split('');
+        // console.log(user_grades);
+
+        let sum = 0;
+
+          for(let i = 0; i < user_grades.length; i++) {  
+            switch (user_grades[i]) {
+            case 'A':
+                sum += 100;
+                break;
+            case 'B':
+                sum += 80;
+                break;
+            case 'C':
+                sum += 70;
+                break;
+            case 'D':
+                sum += 60;
+                break;
+            default:
+                break;
+            }
+            // console.log(sum);
+        }
+
+        let average = sum / user_grades.length;
+        console.log(average);
+
+        if (average <= 60 ) {
+            document.getElementById('msgId').innerText = 'Your GPA is: D';
+        } else if (average > 60 & average <= 70) {
+            document.getElementById('msgId').innerText = 'Your GPA is: C';
+        } else if (average > 70 & average <= 80) {
+            document.getElementById('msgId').innerText = 'Your GPA is: B';
+        } else if (average > 80) {
+            document.getElementById('msgId').innerText = 'Your GPA is: A';
+        }
+     </script>
+</body>
+</html>
